@@ -99,22 +99,21 @@ b = int(input())
 f(a, b)
 
 #7 задание
-d = []
-d.append(int(input()))
-d.append(int(input()))
-d.append(int(input()))
-d.append(int(input()))
-d.append(int(input()))
-if len(set(d) == len(d)):
-    print("Все уникальные")
+number = list(map(int, input().split()))
+
+if len(set(number)) == len(number):
+    print("Все числа уникальны.")
 else:
-    print("Повторяются")
-kolotr = sum(num < 0 for num in d)
-print("Кол-во отриц = ", kolotr)
-kolchet = sum(nums % 2 == 0 for nums in d)
-print("Кол-во четных", kolchet)
-pr = sum(-256 <= nummm <= 1024 for nummm in d)
-print("Кол-во чисел в промежутке = ", pr)
+    print("Не все числа уникальны.")
+
+k = sum(1 for num in number if num % 2 == 0)
+print(f"Количество четных чисел: {k}")
+
+n = sum(1 for num in number if num < 0)
+print(f"Количество отрицательных чисел: {n}")
+
+s = sum(1 for num in number if -256 <= num <= 1024)
+print(f"Количество чисел в диапазоне [-256, 1024]: {s}")
 
 #8 задание
 a = int(input())
